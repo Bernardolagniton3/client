@@ -1,43 +1,83 @@
-import React, { Fragment } from 'react'
+import React, { Fragment,useState } from 'react'
 import { Link } from 'react-router-dom'
+import "./Header.css";
+
 import '../../App.css'
-const Header = () => {
+import * as Constants from "./svg.js";
+import { Dropdown, DropdownButton } from 'react-bootstrap';
+
+const Header = (props) => {
+    const [click, setClick] = useState(false);
+
+    const handleClick = () => setClick(!click);
     return (
-        <Fragment>
-            <nav className="navbar row">
-                <div className="col-12 col-md-3">
-                    <div className="navbar-brand">
-                        <Link to="/">
-                         <img src="/images/logosvg.svg" />
-                        </Link>
-                    </div>
-                </div>
-                <div className="col-12 col-md-6 mt-2 mt-md-0">
-                   <Link to="/" style={{ textDecoration: 'none' }} >
-                        <span id="home" className="ml-3">Home</span>
-                    </Link>
-                    <Link to="/" style={{ textDecoration: 'none' }} >
-                        <span id="home" className="ml-3">About</span>
-                    </Link>
-                    <Link to="/" style={{ textDecoration: 'none' }} >
-                        <span id="home" className="ml-3">Feature Link</span>
-                    </Link>
-                </div>
-                <div className="col-12 col-md-3 mt-4 mt-md-0 text-center">
-                    <span>
-                    <Link to="/">
-                    <i className="fa fa-user" aria-hidden="true"></i>
-                    </Link>
-                    </span>
-                    <span>
-                    <Link to="/contact">
-                    <i className="fa fa-envelope-o" aria-hidden="true"></i>
-                    </Link>
-                    </span>
-                </div>
-            </nav>
-        </Fragment>
-    )
-}
+        <div className="container-header">
+          <div className="top">
+            <div className="top-menu">
+              <nav className="top-left">
+                <span>{Constants.personalIcon}</span>
+                <a href="#0">Personal</a>
+                <span>{Constants.businessIcon}</span>
+                <a href="#0">Business</a>
+              </nav>
+              <nav className="top-right">
+                <span>{Constants.findStoreIcon}</span>
+                <a href="#0">Find a store</a>
+                <span>{Constants.networkIcon}</span>
+                <a href="#0">Network Status Checker</a>
+              </nav>
+            </div>
+          </div>
+          <div className="main">
+            <div className="main-menu">
+            <div className="logo">
+            <Link to={`${process.env.PUBLIC_URL}/`}>{Constants.logo}</Link>
+          </div>
+              <div className="menu-list">
+                <ul
+                  className={click ? "header-menu active" : "header-menu"}
+                  onClick={handleClick}
+                >
+                  <li className="menu-item">
+                    <Link to={`${process.env.PUBLIC_URL}/list`}>Shop</Link>
+                  </li>
+                  <li className="menu-item">
+                    <Link to={`${process.env.PUBLIC_URL}/list`}>Services</Link>
+                  </li>
+                  <li className="menu-item">
+                    <Link to={`${process.env.PUBLIC_URL}/list`}>Insurance</Link>
+                  </li>
+                  <li className="menu-item">
+                    <Link to={`${process.env.PUBLIC_URL}/list`}>Rewards</Link>
+                  </li>
+                  <li className="menu-item">
+                    <Link to={`${process.env.PUBLIC_URL}/list`}>LifeStyle</Link>
+                  </li>
+                </ul>
+                <ul className="right-icons">
+                  <li className="help">Help</li>
+                  <li className="search">{Constants.searchIcon}</li>
+                  <li className="cart">{Constants.cartIcon}</li>
+                  <li className="user">{Constants.userIcon}</li>
+                </ul>
+              </div>
+              <div
+                className={click ? "burger active" : "burger"}
+                onClick={handleClick}
+              >
+                {Constants.burgerIcon}
+              </div>
+              <div
+                className={click ? "close" : "close active"}
+                onClick={handleClick}
+              >
+                {Constants.closeIcon}
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+    
 
 export default Header
