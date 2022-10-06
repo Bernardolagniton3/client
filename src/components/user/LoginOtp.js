@@ -24,9 +24,9 @@ const LoginOtp = () => {
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
                     <form className="shadow-lg" onSubmit={submitHandler} encType='multipart/form-data'>
-                        <h1 className="mb-3">Login with an OTP</h1>
+                        <h1 className="mb-3">Enter OTP</h1>
                         <div className="form-group">
-                            <label className="labelspan" htmlFor="email_field">Cell number or Email/Username</label>
+                            <label className="labelspan" htmlFor="email_field">Cell number</label>
                             <input
                                 type="name"
                                 id="name_field"
@@ -37,18 +37,7 @@ const LoginOtp = () => {
                             />
                         </div>
                         <div className="row"> 
-                        <div className="col-6"> 
-                       <Link to="/register">
-                        <button
-                            id="register_button"
-                            type="submit"
-                            className="btn btn-block py-3"
-                            /* disabled={loading ? true : false} */
-                        >
-                            REGISTER
-                        </button>
-                        </Link> 
-                        </div>
+                       
                         <div className="col-6"> 
                         <button
                             id="register_button"
@@ -56,7 +45,7 @@ const LoginOtp = () => {
                             className="btn btn-block py-3"
                             /* disabled={loading ? true : false} */
                         >
-                            Send OTP
+                            Validate
                         </button>
                         </div>
                         </div>
