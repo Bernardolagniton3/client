@@ -26,7 +26,7 @@ const LoginOtp = () => {
                     <form className="shadow-lg" onSubmit={submitHandler} encType='multipart/form-data'>
                         <h1 className="mb-3">Enter OTP</h1>
                         <div className="form-group">
-                            <label className="labelspan" htmlFor="email_field">Cell number</label>
+                           
                             <input
                                 type="name"
                                 id="name_field"
