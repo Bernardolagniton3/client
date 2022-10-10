@@ -2,8 +2,8 @@ import { Route, Routes } from 'react-router-dom'
 import Header from './components/layout/Header'
 import Home from './components/Home'
 import Login from './components/user/Login'
-import Register from './components/user/Register' 
-import LoginOtp from './components/user/LoginOtp' 
+import Profile from './components/user/Profile'  
+ 
 function App() {
   return (
     <>
@@ -11,8 +11,7 @@ function App() {
      <Routes> 
       <Route path="/home" element={<Home/>}/>
       <Route path="/" element={<Login/>}/>
-      <Route path="/register" element={<Register/>}/>
-      <Route path="/loginotp" element={<LoginOtp/>}/>
+      <Route path="/profile" element={<Profile/>}/>   
     </Routes>
     </>
   );
