@@ -1,0 +1,82 @@
+.statr {
+    box-sizing: border-box;
+    text-align: center;
+    border-right: 1px solid #EBEBEB;
+}
+
+.statr h4 {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: #95989A;
+}
+.statr div {
+    display: block;
+    font-weight: 700;
+    font-size: 16px;
+    margin-top: 5px;
+    font-family: 'Nunito', sans-serif;
+}
+.statl {
+    box-sizing: border-box;
+    text-align: center;
+    border-left: 1px solid #EBEBEB;
+}
+
+.statl h4 {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: #95989A;
+}
+.statl div {
+    display: block;
+    font-weight: 700;
+    font-size: 16px;
+    margin-top: 5px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.stat {
+    box-sizing: border-box;
+    text-align: center;
+    
+    
+}
+
+.stat h4 {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: #95989A;
+}
+.stat div {
+    display: block;
+    font-weight: 700;
+    font-size: 16px;
+    margin-top: 5px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.scrollv{
+    height: 100px;
+    overflow-x: hidden;
+}
+
+.color1{
+    width: 85px;
+    height: 85px;
+    background: linear-gradient(to left, #2D77C1, #68FAC2);
+    border-radius: 100%;
+    box-shadow: 0 10px 15px rgb(110 221 235 / 53%);
+    line-height: 80px;
+    color: #fff;
+    font-size: 32px;
+    padding-left: 2px;
+}

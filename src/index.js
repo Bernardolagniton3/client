@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import {BrowserRouter} from 'react-router-dom'
-import { ApolloClient, InMemoryCache, ApolloProvider,createHttpLink } from "@apollo/client";
- 
+import { ApolloClient, InMemoryCache, ApolloProvider,HttpLink  } from "@apollo/client";
 
-const link = createHttpLink({
-  uri: "http://localhost:4000"
+import { Provider } from 'react-redux';
+
+import  store  from './store';
+
+const link = new HttpLink({
+  uri: "http://localhost:8000/graphql"
 });
 const client = new ApolloClient({
   cache: new InMemoryCache(),
@@ -15,13 +18,13 @@ const client = new ApolloClient({
 })
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <BrowserRouter>
     <ApolloProvider client={client}>
-    <App />
+     <App />
     </ApolloProvider>
     </BrowserRouter>
-  </React.StrictMode>
+    </Provider> 
 );
 
 // If you want to start measuring performance in your app, pass a function

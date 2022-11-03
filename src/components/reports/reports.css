@@ -1,0 +1,117 @@
+.order-card {
+    color: #fff;
+}
+
+.bg-c-blue {
+    background: linear-gradient(45deg,#4099ff,#73b4ff);
+    color: #FFFFFF !important;
+    background: #07a7e3;
+    /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #07a7e3 0%, #32dac3 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #07a7e3 0%, #32dac3 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #07a7e3 0%, #32dac3 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    /* IE6-9 fallback on horizontal gradient */
+    -webkit-transition: opacity 0.2s ease-out;
+    -moz-transition: opacity 0.2s ease-out;
+    -o-transition: opacity 0.2s ease-out;
+    transition: opacity 0.2s ease-out;
+}
+
+.bg-c-green {
+    color: #FFFFFF !important;
+    background: #28C76F;
+    /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #28C76F 0%, #81FBB8 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #28C76F 0%, #81FBB8 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #28C76F 0%, #81FBB8 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+     /* IE6-9 fallback on horizontal gradient */
+    -webkit-transition: opacity 0.2s ease-out;
+    -moz-transition: opacity 0.2s ease-out;
+    -o-transition: opacity 0.2s ease-out;
+    transition: opacity 0.2s ease-out;
+    -webkit-transition: width 0.3s ease-in-out;
+    -moz-transition: width 0.3s ease-in-out;
+    -o-transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out;
+}
+
+.bg-c-yellow {
+    color: #fff;
+    background: #FC9131;
+    /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #FC9131 0%, #FCCF31 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #FC9131 0%, #FCCF31 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #FC9131 0%, #FCCF31 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+     /* IE6-9 fallback on horizontal gradient */
+    -webkit-transition: opacity 0.2s ease-out;
+    -moz-transition: opacity 0.2s ease-out;
+    -o-transition: opacity 0.2s ease-out;
+    transition: opacity 0.2s ease-out;
+    -webkit-transition: width 0.3s ease-in-out;
+    -moz-transition: width 0.3s ease-in-out;
+    -o-transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out;
+}
+
+.bg-c-pink {
+    color: #FFFFFF !important;
+    background: #EA5455;
+    /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #EA5455 0%, #FC9131 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #EA5455 0%, #FC9131 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #EA5455 0%, #FC9131 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+     /* IE6-9 fallback on horizontal gradient */
+    -webkit-transition: opacity 0.2s ease-out;
+    -moz-transition: opacity 0.2s ease-out;
+    -o-transition: opacity 0.2s ease-out;
+    transition: opacity 0.2s ease-out;
+    -webkit-transition: width 0.3s ease-in-out;
+    -moz-transition: width 0.3s ease-in-out;
+    -o-transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out;
+}
+
+.pad2060{
+    padding: 20px 60px;
+}
+
+.pad20{
+    padding: 20px;
+}
+.card {
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+    box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+    border: none;
+    margin-bottom: 30px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.card .card-block {
+    padding: 25px;
+}
+
+.order-card i {
+    font-size: 26px;
+}
+
+.f-left {
+    float: left;
+}
+
+.f-right {
+    float: right;
+}

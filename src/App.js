@@ -1,17 +1,21 @@
 import { Route, Routes } from 'react-router-dom' 
-import Home from './components/Home'
-import Login from './components/user/Login'
-import Profile from './components/user/Profile'  
+import Report from './components/reports/Report'
  
+import LoginMain from './components/user/LoginMain'
+import LoginOtpEnter from './components/user/LoginOtpEnter'
+import Profile from './components/user/Profile'  
+
 function App() {
   return (
     <>
      
-     <Routes> 
-      <Route path="/home" element={<Home/>}/>
-      <Route path="/" element={<Login/>}/>
-      <Route path="/profile" element={<Profile/>}/>   
-    </Routes>
+      <Routes> 
+       <Route path="/" element={<LoginMain/>}/>  
+       <Route path="/report" element={<Report/>}/> 
+       <Route path="/LoginOtpEnter" element={<LoginOtpEnter/>}/>   
+       <Route path="/profile" element={<Profile/>}/>  
+     </Routes>
+    
     </>
   );
 }

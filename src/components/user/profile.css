@@ -5,6 +5,108 @@ a:focus{
 	text-decoration: none;
 	transition: all 0.3s;
 }
+.text-primary{
+    color:#cf1729!important;
+}
+.marL0{
+    margin-left: 0px;
+}
+.bgnew{
+    background-color: #f4f7f8;
+}
+.borsilver{
+    border:1px solid black;
+    width: 100px;
+    height: 20px;
+    border-radius: 20px;
+}
+.textb{
+    font-family: 'Nunito', sans-serif;
+    color: #384047;
+    padding: 4px;
+    font-size: 14px;
+    border: 1px solid #eae8e8;
+}
+ 
+.bgcolor0{
+    background-color: #007bff; 
+}
+.bgcolor{
+    background-color: #038db0; 
+}
+.mr-po27{
+    position: relative;
+    left: -37px;
+} 
+.posRT20{
+    position: relative;
+    top:20px;
+}
+.color1{
+    color: #007bff;
+}
+.color2{
+    color:lightsalmon;
+}
+.color3{
+    color:crimson
+}
+.color4{
+    color: forestgreen;
+}
+.pad0{
+    padding: 0;
+}
+.chartjs-render-monitor{
+    display: block; 
+    height: 245px; 
+    width: 272px;
+}
+.font30{
+    font-size: 30px;
+}
+.mr-po20{
+    position: relative;
+    left: -24%;
+}
+.pos-l4{
+    font-weight: 700;
+    position: relative;
+    left: 4px;
+}
+.pos-r34{
+    position: relative;
+    left: -31px;
+}
+.pos-r7{
+    position: relative;
+    right: -7px;
+    margin-bottom: 10px;
+}
+.textLabel{
+    position: relative;
+    color: #000;
+    margin-left: 6px;
+    font-weight: 700;
+    font-size: 14px;
+}
+.textbn{
+    font-family: 'Nunito', sans-serif;
+    color: #000;
+    line-height: 15px;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 4px;
+    margin-left: 5px;
+}
+.textbni{
+    display: block;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #95989A;
+    padding: 4px;
+    line-height: 14px;
+}
 .navbar{
 	padding: 15px 10px;
 	background: #fff;
@@ -30,6 +132,69 @@ a:focus{
     width: 34px;
     height: 34px;
 	background-color: red;
+
+}
+.height230 {
+    height: 200px;
+}
+.marCenter{
+    margin: 0 auto!important;
+}
+.posT15{
+    position: relative;
+    top:3px;
+}
+.pad0{
+    padding: 0;
+}
+.scrollv{
+    height: 137px;
+    overflow-x: hidden;
+}
+.btndesign {
+   
+    height: 59px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #fdfcfc;
+    background-color: #cf1729!important;
+    border: none;
+    /* border-radius: 72px; */
+    box-shadow: 0px 8px 15px rgb(0 0 0 / 10%);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+.marLR{
+    margin-left: 20px;
+    margin-top: 5px;
+}
+.redColor{
+    color:red;
+    font-size: 13px;
+    padding: 19px;
+}
+.cardBor{
+    height: 223px;
+}
+.w200{
+    width: 300px;
+    margin-right: 8px;
+}
+.posL15{
+    position: relative;
+    left: 15px;
+}
+.plogo{
+    position: relative;
+    left: -12px;
+    top: 1px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #ffffff;
 }
 .lglspan{
 	position: relative;
