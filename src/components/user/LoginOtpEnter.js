@@ -2,23 +2,28 @@ import React, { Fragment, useState, useEffect  } from 'react'
 import {useLocation, useNavigate} from 'react-router-dom';
 import LoadingScreen from "react-loading-screen" 
 import spinner from "../../images/svglogo.gif"
+//import Profile from './Profile';
 
 const LoginOtpEnter = () => {
-   // const { otp } = useSelector(state => state.auth)
+  
     const location = useLocation();
     const navigate = useNavigate();
+    const [items, setAllItems] = useState([]);
     const [AllToken, setAllToken] = useState([]);
+   // const [ProfileNameOtp, setProfileNameOtp] = useState("");
     const [Phoneprops, setPhoneprops] = useState("");
     const [ValidOtp , setValidOtp] = useState(false)
-     const [otp, setOtp] = useState();  
+    const [otp, setOtp] = useState('');  
     const [UserProfileSession, setUserProfileSession] = useState([]);
     const [BalanceSes, setBalanceSes]  = useState([]);
     const [validate, setValidate] = useState(false);
     const [OtpText, setOtpText] =  useState(true);
     const submitHandlerOtp = (e) => {
+        
         e.preventDefault();   
           loginUser({
             otp,
+             
         }).then(response => {
             if (response) {
                  
@@ -26,37 +31,29 @@ const LoginOtpEnter = () => {
                  setAllToken(response['token']) 
                  setValidate(true)
                  setOtpText(false)
-            } else {
-                console.log(response['message'])
-            }
+            }  
         }).catch(error => {
             console.log("some error occurred", error);
             setValidOtp(true);
         });
-          
-        
     }
-    
-   // console.log("ProfileNameOtp", ProfileNameOtp)
-  
-   console.log("UserProfileSession" , UserProfileSession)
     useEffect(() => {
-       
-     
         setPhoneprops(location.state.phoneNumber) 
-        
-      
-    }, [location.state]);
+        const items = JSON.parse(sessionStorage.getItem('otp'));
+            setAllItems(items);
+      // eslint-disable-next-line                
+    }, [items]);
     
+
    //loading set
     useEffect(() =>{
         sessionStorage.setItem('profile', JSON.stringify(UserProfileSession));
         sessionStorage.setItem('balance', JSON.stringify(BalanceSes));
+    // eslint-disable-next-line     
     },[UserProfileSession, BalanceSes])
     useEffect(() => { 
        
         const fetchQL =  () => {
-        
             const query = `
                query($msisdn: String){
                user(msisdn: $msisdn), {
@@ -113,17 +110,11 @@ const LoginOtpEnter = () => {
             setBalanceSes(data.data.customerBalance);
             
              if(data){
-                 //setHide(true)
                   setTimeout(() => {
                     navigate('/Profile',{state:{id:1,phoneNumber:data.data.user}});
                       //window.location.href = "/Profile"
-                        
-                     
-                 
                 }, 1000); 
               }
-
-              
         })
         }
         if (validate) {
@@ -133,7 +124,8 @@ const LoginOtpEnter = () => {
             
             }, 3000);
         }
-    }, [validate, Phoneprops, AllToken, navigate]);  
+        // eslint-disable-next-line 
+    }, [validate, Phoneprops, AllToken]);  
       async function loginUser(credentials) {
         return fetch('http://localhost:8000/verify',
          {
@@ -145,11 +137,11 @@ const LoginOtpEnter = () => {
         })
             .then(data => data.json())
     }
-
-  
     return (
         <Fragment>
-            <Fragment>   
+            <Fragment>
+   
+             
                 {validate && (  
                  <LoadingScreen 
                    loading={true}
@@ -162,8 +154,7 @@ const LoginOtpEnter = () => {
                     <div className="col-10 col-lg-5">
                         <form className="shadow-lg" onSubmit={submitHandlerOtp} encType='multipart/form-data'>
                             <h1 className="mb-3 font30">Enter OTP</h1>
-                            {/* <div>{location.state.phoneNumber}</div> */}
-                          <div className="form-group posRT20">
+                           <div className="form-group posRT20">
                                 <input
                                   
                                     type="name"
@@ -187,10 +178,7 @@ const LoginOtpEnter = () => {
                         </form>
                   </div>
                   </div>):""}   
-                
-             {/*    {BalanceSes && (<><Profile data={{...BalanceSes}}/></>)}
-               */}
-                </Fragment>
+                 </Fragment>
         </Fragment>
     )
 }

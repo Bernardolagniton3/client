@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import "./reports.css"
- 
+import { useAPI } from './Apicontext' 
 import Header from '../layout/Header' 
 import { getReports } from '../../actions/reportsAction'
 import { useDispatch, useSelector } from 'react-redux'
@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 
 const Report = () => {
-   // const { reportsData } = useAPI();
+    const { reportsData } = useAPI();
     // eslint-disable-next-line 
     const [TimeStamp, setTimeStamp] = useState(''); 
     const dispatch = useDispatch();
@@ -16,19 +16,10 @@ const Report = () => {
     const {   isAuthenticated, otp   } = useSelector(state => state.auth)
     const {loading, reports, error} = useSelector(state => state.reports)
 
-  useEffect(() =>{
-    dispatch(getReports()); 
-  },[dispatch])
-
-  useEffect(() => {
-    const timestamp = Date.now(); // This would be the timestamp you want to format
-    const value = new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(timestamp)
-    console.log('v', value)
-    setTimeStamp(value)
-}, []);
+ 
 
  
- console.log('loginAttempts',reports.loginAttempts)
+ console.log('report',reports)
  console.log('otp',isAuthenticated)
     return (
         <Fragment>
@@ -45,7 +36,7 @@ const Report = () => {
                                               <div className="card bg-c-blue order-card">
                                                   <div className="card-block">
                                                       <h6 className="m-b-20">Login Attempts</h6>
-                                                    <h2 className="text-right"><i className="fa fa-sign-in f-left"></i><p>{reports.loginAttempts} Times</p></h2>  
+                                                      <h2 className="text-right"><i className="fa fa-sign-in f-left"></i><p>{reportsData.loginAttempts} Times</p></h2>
                                                       <p className="m-b-0"> <i className="f-right"></i></p>
                                                   </div>
                                               </div>
@@ -54,7 +45,7 @@ const Report = () => {
                                               <div className="card bg-c-green order-card">
                                                   <div className="card-block">
                                                       <h6 className="m-b-20">Successful Logins</h6>
-                                                     <h2 className="text-right"><i className="fa fa-check f-left"></i><p>{reports.successfulLogins} Times</p></h2>  
+                                                      <h2 className="text-right"><i className="fa fa-check f-left"></i><p>{reportsData.successfulLogins} Times</p></h2>
                                                       <p className="m-b-0"> <i className="f-right"></i></p>
                                                   </div>
                                               </div>
@@ -63,7 +54,7 @@ const Report = () => {
                                               <div className="card bg-c-yellow order-card">
                                                   <div className="card-block">
                                                       <h6 className="m-b-20">Help Button Used</h6>
-                                                        <h2 className="text-right"><i className="fa fa-refresh f-left"></i><p>{reports.helpButtonUsed} Times</p></h2>  
+                                                      <h2 className="text-right"><i className="fa fa-refresh f-left"></i><p>{reportsData.helpButtonUsed} Times</p></h2>
                                                       <p className="m-b-0"><i className="f-right"></i></p>
                                                   </div>
                                               </div>
@@ -72,7 +63,7 @@ const Report = () => {
                                               <div className="card bg-c-pink order-card">
                                                   <div className="card-block">
                                                       <h6 className="m-b-20">OTP Failures</h6>
-                                                        <h2 className="text-right"><i className="fa fa-exclamation-triangle f-left"></i><p>{reports.otpFaliures} Times </p></h2>  
+                                                      <h2 className="text-right"><i className="fa fa-exclamation-triangle f-left"></i><p>{reportsData.otpFaliures} Times </p></h2>
                                                       <p className="m-b-0"><i className="f-right"></i></p>
                                                   </div>
                                               </div>
@@ -86,7 +77,7 @@ const Report = () => {
                                               <div className="card bg-c-blue order-card">
                                                   <div className="card-block">
                                                       <h6 className="m-b-20">Users</h6>
-                                                        <h2 className="text-right"><i className="fa fa-user f-left"></i><p>{reports.queriesAttempted?.user} Times</p></h2>  
+                                                      <h2 className="text-right"><i className="fa fa-user f-left"></i><p>{reportsData.queriesAttempted?.user} Times</p></h2>
                                                       <p className="m-b-0"><i className="f-right"></i></p>
                                                   </div>
                                               </div>
@@ -95,7 +86,7 @@ const Report = () => {
                                               <div className="card bg-c-green order-card">
                                                   <div className="card-block">
                                                       <h6 className="m-b-20">Customer Balance</h6>
-                                                   <h2 className="text-right"><i className="fa fa-book f-left"></i><p>{reports.queriesAttempted?.customerBalance} Times</p></h2>  
+                                                      <h2 className="text-right"><i className="fa fa-book f-left"></i><p>{reportsData.queriesAttempted?.customerBalance} Times</p></h2>
                                                       <p className="m-b-0"><i className="f-right"></i></p>
                                                   </div>
                                               </div>
@@ -104,7 +95,7 @@ const Report = () => {
                                               <div className="card bg-c-yellow order-card">
                                                   <div className="card-block">
                                                       <h6 className="m-b-20">Child Numbers</h6>
-                                                   <h2 className="text-right"><i className="fa fa-phone f-left"></i><div>{reports.queriesAttempted?.childNumberBalances} Times </div></h2> 
+                                                      <h2 className="text-right"><i className="fa fa-phone f-left"></i><div>{reportsData.queriesAttempted?.childNumberBalances} Times </div></h2>
                                                       <p className="m-b-0"><i className="f-right"></i></p>
                                                   </div>
                                               </div>

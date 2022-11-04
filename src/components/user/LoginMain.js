@@ -1,27 +1,28 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useState, useEffect} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import * as Constants from "../layout/svg.js"
 import "./profile.css"
 import "./LoginMain.css"
 import { useDispatch, useSelector } from 'react-redux'
 import { login } from '../../actions/userLoginAction.js'
- 
 
 const LoginMain = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const { otp } = useSelector(state => state.auth)
-  
+    // eslint-disable-next-line   
+    const {loading, isAuthenticated, otp, error} = useSelector(state => state.auth)
     const [userName, setUserName] = useState();
     const [numberTrue, setNumberTrue] = useState(true);
     const [password, setPassword] = useState();
     const [phoneNumber, setMs] = useState();
-    const [OTPval, setOTPval] = useState([]);
+    const [ValitOtp, setValitOtp] = useState();
  
- 
-
-    //const [ValidationError, setValidationError] = useState(false);
- 
+    useEffect(() => {
+        if(otp){
+        setValitOtp(otp)
+        }
+     }, [dispatch, isAuthenticated, otp]);
+     
     const isNumber = (str) => {
     if (str.trim() === '') {
       return false;
@@ -30,39 +31,26 @@ const LoginMain = () => {
     return !isNaN(str);
   }
      
-
-
   const handleChange = event => {
-
       if (isNumber(event.target.value)) {
                 setNumberTrue(true) 
                 //setUsernameString(false)
                 setMs(event.target.value);
-            
             console.log('✅ It is a valid number');
         } else {
-          console.log('⛔️ It is NOT a valid number');
+            console.log('⛔️ It is NOT a valid number');
                 setNumberTrue(false) 
                // setUsernameString(true)
                 setUserName(event.target.value);
         } 
   };  
 
-  const submitHandler = (e) => {
+  const submitHandler = (e, otp) => {
        e.preventDefault();
        dispatch(login(phoneNumber, password))
-       setOTPval(otp)
-       if(otp){
-        navigate('/LoginOtpEnter',{state:{id:1,phoneNumber:phoneNumber, ValitOtp:otp}});
-       }
-       
+       //window.location.href = "/LoginOtpEnter";
+       navigate('/LoginOtpEnter',{state:{id:1,phoneNumber:phoneNumber, ValitOtp:ValitOtp}});
   };
-
-  
-
-  console.log("pho",phoneNumber)
-  console.log("pass",password)
-  console.log("ValitOtpValitOtpValitOtpValitOtpValitOtp",OTPval)
   
     return (
         <Fragment>
@@ -139,9 +127,7 @@ const LoginMain = () => {
               
              
                   
-              
-                
-                
+            
             </Fragment>
         </Fragment>
     )

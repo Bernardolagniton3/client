@@ -20,6 +20,7 @@ const ChildNumber = (props) => {
           submitHandler();
       }, 3000);
   }
+  // eslint-disable-next-line 
   },[])
 
   props.func(validate);
@@ -68,9 +69,7 @@ const ChildNumber = (props) => {
           return response.json();
           
       }).then(data => {
-        /*   setData(data)  */
-          console.log("DATA graphqlDATA graphqlDATA graphqlDATA graphqlDATA graphql",data);
-          // setUserProfile(data.data.user);
+           // setUserProfile(data.data.user);
           setUserChildBalance(data.data.customerBalance);
          
       })

@@ -2,7 +2,6 @@ import React, { Fragment  } from 'react'
 import './balancedata.css' 
 const BalanceData = (props) => {
     const allbundlename = props.data[1]?.bundle;
-    console.log("allbundlename", allbundlename)
     const contentBundle = allbundlename?.map(item => {
         return(         
               <div key={item.name} className='row'>

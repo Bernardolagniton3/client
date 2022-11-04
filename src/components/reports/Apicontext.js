@@ -8,7 +8,6 @@ export function APIContextProvider ({children}) {
     useEffect(() => {
       async function fetchData() {
         const { data } = await axios.get(`http://localhost:8000/report`);
-        console.log("reportsDatareportsDatareportsDatareportsData--1",data);
         setReportsData(data);
       }
       fetchData();

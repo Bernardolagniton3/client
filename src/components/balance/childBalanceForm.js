@@ -1,11 +1,8 @@
-import React, { Fragment, useState, useEffect  } from 'react'
+import React, { Fragment } from 'react'
  
 const ChildBalanceForm = (props) => {
     // const childBalance = props.data?.msisdn;
-     const childBalanceBalance = props.data?.balances?.[0].bundle;
-    
-     console.log("childBalanceBalancechildBalanceBalance", childBalanceBalance)
-
+   const childBalanceBalance = props.data?.balances?.[0].bundle; 
     const contentBundle = childBalanceBalance?.map(item => {
         return(         
               <div key={item.name} className='row'>

@@ -1,11 +1,10 @@
-import React, { Fragment, useState, useEffect  } from 'react'
+import React, { Fragment   } from 'react'
  
 const ChildBalance = (props) => {
     const totalRemaining = props.data?.balances?.[0].totalRemaining;
     const totalRemainingData = props.data?.balances?.[1].totalRemaining;
     const totalRemainingSMS = props.data?.balances?.[2].totalRemaining;
     const totalRemainingMMS= props.data?.balances?.[4].totalRemaining;
-    console.log("totalRemainingtotalRemainingtotalRemaining", totalRemaining)
   return (
       <Fragment>
               <Fragment>

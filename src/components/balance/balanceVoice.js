@@ -1,8 +1,6 @@
 import React, { Fragment  } from 'react'
 import './balancevoice.css'
 const BalanceVoice = (props) => {
- 
-
     const Voicebundlename = props.data[0]?.bundle;
     const contentBundle = Voicebundlename?.map(item => {
       return(         

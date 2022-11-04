@@ -6,23 +6,6 @@ const voice = props.data[0]?.totalRemaining;
 const data = props.data[1]?.totalRemaining;   
 const sms = props.data[2]?.totalRemaining; 
 const mms = props.data[3]?.totalRemaining;   
-
-
-   console.log("voice", voice)
-   console.log("data", data)
-   console.log("sms", sms)
-   console.log("mms", mms)
-/* 
-    const contentTotalRemaining = data?.map((item, index) => {
-        return(         
-            <div key={index} className='col-md-3'> 
-            <div className='small text-height-1 pos-r7'>{sms}</div>
-            </div> 
-            
-        )
-    })
-      */
-   
     return (
         <Fragment>
                 <Fragment>

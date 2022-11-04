@@ -3,15 +3,18 @@ import ProfileHeader from '../layout/ProfileHeader'
 import BalanceVoice from '../balance/balanceVoice'
 import BalanceData from '../balance/balanceData'
 import "./profile.css"
+
 import TotalRemaining from '../total/totalRemaining'
 import BalanceSMS from '../balance/balanceSMS'
 import BalanceMMS from '../balance/balanceMMS'
 import ChildNumber from '../childnumber/ChildNumber'
 import ChildBalance from '../balance/childBalance'
 import ChildBalanceForm from '../balance/childBalanceForm'
-import { useLocation } from 'react-router-dom';
+//import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
 const Profile = () => {
-    const location = useLocation();
+    const navigate = useNavigate();
+   // const location = useLocation();
     const [profile, setProfile] = useState([]);
     const [profileName, setProfileName] = useState([]);
     const [profileFamily, setProfileFamily] = useState([]);
@@ -24,7 +27,7 @@ const Profile = () => {
     const [CustomerBalance, setCustomerBalance] = useState([{}]);
     const [ProfileUserEmail, setProfileUserEmail] = useState([]);
     const [ProfileUserPhone, setProfileUserPhone] = useState([]);
-    const [NewProfile, setNewProfile] = useState([]);
+    //const [NewProfile, setNewProfile] = useState([]);
  
     const [validateChild, setValidateChild] = useState([]);
     const [ChildForm, setChildForm] = useState([{}]);
@@ -38,13 +41,10 @@ const Profile = () => {
     const ChildValue = (data) => {
       setChildVal(data)
     }
-
-    console.log("NewProfile",NewProfile) 
     useEffect(() => {
     const items = JSON.parse(sessionStorage.getItem('profile'));
     const customerBalance = JSON.parse(sessionStorage.getItem('balance'));
-    console.log("lollol",location.state.phoneNumber) 
-    setNewProfile(location.state.phoneNumber)
+   // setNewProfile(location.state.phoneNumber)
         setProfile(items);
         setCustomerBalance(customerBalance)
         setProfileName(items?.fullName)
@@ -58,9 +58,12 @@ const Profile = () => {
         setProfileUserChild(items?.childNumbers?.[0])
         setProfileUserChildSec(items?.childNumbers?.[1])
 
-       
+     // eslint-disable-next-line   
     }, []);
     
+    window.onpopstate = () => {
+      navigate("/");
+    }
      return (
         <Fragment>
             <Fragment>

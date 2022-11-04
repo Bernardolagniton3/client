@@ -1,24 +1,20 @@
 import React, { Fragment,useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import "./Header.css";
-import useLocalStorage from '../../hooks/setlocalstorage'
+import { useNavigate } from 'react-router-dom'
 import '../../App.css'
 import * as Constants from "./svg.js";
 
 const ProfileHeader = (props) => {
-  console.log('props',props)
-  console.log('userName', props.data?.userAccess)
-  
-    const [click, setClick] = useState(false);
-    const handleClick = () => setClick(!click);
-    const [profile, setProfile] = useState([]);
-    const [profileName, setProfileFamily] = useState([]);
-    const [reports, setReports] = useLocalStorage("reports", []);
+     const [click, setClick] = useState(false);
+     const handleClick = () => setClick(!click);
+     const [profileName, setProfileFamily] = useState([]);
+     const navigate = useNavigate();
     
     useEffect(() => {
-      const items = JSON.parse(localStorage.getItem('profile'));
+      const items = JSON.parse(sessionStorage.getItem('profile'));
       if (items) {
-          setProfile(items);
+          //setProfile(items);
           setProfileFamily(items?.familyName)
       }
       }, [profileName]);
@@ -39,10 +35,10 @@ const ProfileHeader = (props) => {
         
     }).then(data => {
       /*   setData(data)  */
-        setReports(data)
-        console.log("DATA graphqlDATA graphqlDATA graphqlDATA graphqlDATA graphql",data);
-        if(data){
-          window.location.href = "/report";
+      
+         if(data){
+          //window.location.href = "/report";
+          navigate('/report');
         }
        
     })
@@ -52,9 +48,6 @@ const ProfileHeader = (props) => {
           <div className="top">
             <div className="top-menu">
               <nav className="top-right">
-                {/* <span>{Constants.findStoreIcon}</span>
-                <a href="#0">Find a store</a>
-                 */}
               </nav>
             </div>
           </div>
@@ -75,7 +68,7 @@ const ProfileHeader = (props) => {
                     <Link onClick={fetchReports}>Report</Link>
                   </li></>):""} */}
                      { props.data?.userName === 'billy'  ? (<> <li className="menu-item">
-                    <Link onClick={fetchReports}>Report</Link>
+                    <Link target="_blank" onClick={fetchReports}>Report</Link>
                   </li></>):""} 
                 </ul>
                 <div className='row'> 
