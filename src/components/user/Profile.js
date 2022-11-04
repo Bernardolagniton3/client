@@ -117,7 +117,7 @@ const Profile = () => {
                                 </div>
                             </div>
                             {validateChild ? (<>
-                             <div className="col-xl-5 col-lg-5">
+                             <div className="col-xl-5 col-lg-5 col-md-12">
                               <div className="card height230 shadow mb-4">
                                 <div className="card-header py-3">
                                     <h6 className="m-0 font-weight-bold text-primary">{ChildVal} - CHILD NUMBER TOTAL REMAINING</h6>
@@ -127,7 +127,7 @@ const Profile = () => {
                             </div>
                             </>): <TotalRemaining data={{...CustomerBalance.balances}}/>}
                             {validateChild ? (<>
-                              <div className="col-xl-12 col-lg-5">
+                              <div className="col-xl-12 col-lg-12 col-md-12">
                                {/* BALANCE PAGE */}
                                 <div className="card shadow mb-4">
                                     <div className="card-header py-3">
@@ -137,7 +137,7 @@ const Profile = () => {
                                     </div>
                                </div> 
                             </>):
-                            <div className="col-xl-12 col-lg-5">
+                            <div className="col-xl-12 col-lg-12 col-md-12">
                                {/* BALANCE PAGE */}
                                 <div className="card shadow mb-4">
                                     <div className="card-header py-3">
