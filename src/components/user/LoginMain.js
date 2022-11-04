@@ -16,7 +16,7 @@ const LoginMain = () => {
     const [password, setPassword] = useState();
     const [phoneNumber, setMs] = useState();
     const [ValitOtp, setValitOtp] = useState();
- 
+    window.sessionStorage.clear();
     useEffect(() => {
         if(otp){
         setValitOtp(otp)

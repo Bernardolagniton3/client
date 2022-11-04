@@ -1,7 +1,6 @@
 import React, { Fragment,useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import "./Header.css";
-import { useNavigate } from 'react-router-dom'
 import '../../App.css'
 import * as Constants from "./svg.js";
 
@@ -22,8 +21,11 @@ const ProfileHeader = (props) => {
     const logout = (e) =>{
       e.preventDefault();
       window.sessionStorage.clear();
-      window.localStorage.clear();
-      window.location.href = "/";
+      
+        //window.location.href = "/report";
+        navigate('/');
+    
+ 
     }  
 
     const fetchReports =  (e) => {
