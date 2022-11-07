@@ -1,27 +1,25 @@
-import React, { Fragment, useState, useEffect } from 'react'
+import React, { Fragment, useState, useEffect} from 'react'
 import "./reports.css"
 import { useAPI } from './Apicontext' 
 import Header from '../layout/Header' 
-import { getReports } from '../../actions/reportsAction'
-import { useDispatch, useSelector } from 'react-redux'
-    
-
+import {  useSelector } from 'react-redux'
 
 const Report = () => {
     const { reportsData } = useAPI();
     // eslint-disable-next-line 
     const [TimeStamp, setTimeStamp] = useState(''); 
-    const dispatch = useDispatch();
     // eslint-disable-next-line 
-    const {   isAuthenticated, otp   } = useSelector(state => state.auth)
+    const { isAuthenticated, otp   } = useSelector(state => state.auth)
+     // eslint-disable-next-line 
     const {loading, reports, error} = useSelector(state => state.reports)
 
- 
-
- 
- console.log('report',reports)
- console.log('otp',isAuthenticated)
-    return (
+    useEffect(() => {
+        const timestamp = Date.now(); // This would be the timestamp you want to format
+        const value = new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(timestamp)
+        console.log('v', value)
+        setTimeStamp(value)
+ }, []);
+     return (
         <Fragment>
             <Fragment>
                 <Header/>
